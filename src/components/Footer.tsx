@@ -1,143 +1,120 @@
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Mail, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
+import agenticLogo from '@/assets/agentic-logo.png';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-black border-t border-green-500/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Logo and Description */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 relative">
-                <img 
-                  src="/lovable-uploads/8acfad30-aa90-4edd-b779-aafd43058584.png" 
-                  alt="Psycotik Crew Logo" 
-                  className="h-full w-full object-contain" 
-                />
-              </div>
-              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">
-                Psycotik Crew
-              </h2>
-            </div>
-            <p className="text-gray-300 max-w-md">
-              Professional sound and light rental service for events, concerts, and parties. Turning your events into unforgettable experiences.
+    <footer className="bg-black border-t border-white/10 py-12 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
+          {/* Logo and About */}
+          <div className="md:col-span-2">
+            <Link to="/" className="inline-block mb-4">
+              <img 
+                src={agenticLogo} 
+                alt="AgenticEcom - Agentic Ecommerce Solutions" 
+                className="h-16 w-auto"
+              />
+            </Link>
+            <p className="text-white/60 mb-4 max-w-md">
+              Pioneering the future of ecommerce through agentic AI research and full-scale business solutions.
             </p>
-            <div className="flex space-x-4 pt-2">
+            <div className="flex space-x-4">
               <a 
-                href="https://instagram.com" 
+                href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-white/60 hover:text-white transition-colors"
+                aria-label="Twitter"
               >
-                <Instagram size={20} />
+                <Twitter size={20} />
               </a>
               <a 
-                href="https://facebook.com/psicptyk.free" 
+                href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-white/60 hover:text-white transition-colors"
+                aria-label="LinkedIn"
               >
-                <Facebook size={20} />
+                <Linkedin size={20} />
               </a>
               <a 
-                href="https://youtube.com" 
+                href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-white/60 hover:text-white transition-colors"
+                aria-label="GitHub"
               >
-                <Youtube size={20} />
+                <Github size={20} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-medium mb-4 pb-2 border-b border-green-500/10">
-              Quick Links
-            </h3>
+            <h3 className="text-white font-bold mb-4 uppercase tracking-wide text-sm">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <NavLink 
-                  to="/" 
-                  className="text-gray-300 hover:text-green-400 transition-colors"
-                >
+                <Link to="/" className="text-white/60 hover:text-white transition-colors">
                   Home
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink 
-                  to="/services" 
-                  className="text-gray-300 hover:text-green-400 transition-colors"
-                >
+                <Link to="/blog" className="text-white/60 hover:text-white transition-colors">
+                  Research
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-white/60 hover:text-white transition-colors">
                   Services
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink 
-                  to="/blog" 
-                  className="text-gray-300 hover:text-green-400 transition-colors"
-                >
-                  Blog
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
-                  to="/references" 
-                  className="text-gray-300 hover:text-green-400 transition-colors"
-                >
-                  References
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
-                  to="/booking" 
-                  className="text-gray-300 hover:text-green-400 transition-colors"
-                >
-                  Booking
-                </NavLink>
+                <Link to="/references" className="text-white/60 hover:text-white transition-colors">
+                  Portfolio
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h3 className="text-white font-medium mb-4 pb-2 border-b border-green-500/10">
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-center space-x-3 text-gray-300">
-                <Mail size={16} className="text-green-500" />
-                <span>psk-services@gmail.com</span>
+            <h3 className="text-white font-bold mb-4 uppercase tracking-wide text-sm">Contact</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/booking" className="text-white/60 hover:text-white transition-colors">
+                  Get in Touch
+                </Link>
               </li>
-              <li className="flex items-center space-x-3 text-gray-300">
-                <Facebook size={16} className="text-green-500" />
+              <li>
                 <a 
-                  href="https://www.facebook.com/psicptyk.free" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-green-400 transition-colors"
+                  href="mailto:info@agenticecom.com" 
+                  className="text-white/60 hover:text-white transition-colors flex items-center"
                 >
-                  facebook.com/psicptyk.free
+                  <Mail size={16} className="mr-2" />
+                  info@agenticecom.com
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-green-500/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Psycotik Crew. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-white/40 text-sm mb-4 md:mb-0">
+            © {currentYear} AgenticEcom. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
+          <div className="flex space-x-6 text-sm">
+            <Link to="/" className="text-white/40 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">
+            </Link>
+            <Link to="/" className="text-white/40 hover:text-white transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

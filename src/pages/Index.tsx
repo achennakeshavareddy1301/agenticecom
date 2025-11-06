@@ -1,144 +1,281 @@
 import React, { useEffect } from "react";
-import HeroSection from "@/components/HeroSection";
-import ServiceCard from "@/components/ServiceCard";
 import { Link } from "react-router-dom";
-import { Volume2, Music2, Lightbulb, PartyPopper, MoveRight, CalendarDays } from "lucide-react";
+import { Brain, Code, TrendingUp, ShoppingCart, Sparkles, ArrowRight } from "lucide-react";
+import agenticLogo from '@/assets/agentic-logo.png';
 
 const Index = () => {
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const featuredServices = [
+  const services = [
     {
-      title: "Sound System",
-      description: "Professional sound systems for any size venue, from small gatherings to large festivals.",
-      icon: <Volume2 size={24} />,
-      imageSrc: "/lovable-uploads/708f9e32-840d-46a4-aaa4-75ad2689e16f.png",
-      link: "/services#sound"
+      title: "Startup Ecom",
+      description: "Launch your online store with AI-powered automation. Perfect for new businesses ready to scale from day one.",
+      icon: <ShoppingCart className="w-8 h-8" />,
     },
     {
-      title: "Lighting Equipment",
-      description: "Create the perfect atmosphere with our state-of-the-art lighting equipment and expert setup.",
-      icon: <Lightbulb size={24} />,
-      imageSrc: "/lovable-uploads/becfc2e3-b59f-4f86-afca-b9f6fc7b7c14.png",
-      link: "/services#lighting"
+      title: "Agentic Automation",
+      description: "Transform your existing store with intelligent agents that handle customer service, inventory, and marketing.",
+      icon: <Brain className="w-8 h-8" />,
     },
     {
-      title: "DJ Services",
-      description: "Experienced DJs to keep your event energized with the perfect music selection.",
-      icon: <Music2 size={24} />,
-      imageSrc: "/lovable-uploads/03e83f18-76a1-4349-a197-dbde03a93343.png",
-      link: "/services#dj"
+      title: "Enterprise Solutions",
+      description: "Custom-built platforms for large-scale operations with advanced AI integration and scalable architecture.",
+      icon: <Code className="w-8 h-8" />,
     }
+  ];
+
+  const benefits = [
+    "AI-powered customer service automation",
+    "Intelligent inventory management",
+    "Predictive analytics and insights",
+    "Seamless integration with existing tools"
   ];
 
   return (
     <div>
-      <HeroSection />
-      
-      {/* Services Section */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-2">Our Services</h2>
-              <p className="text-gray-400 max-w-2xl">
-                Professional equipment and expert technicians for all your sound and lighting needs
-              </p>
-            </div>
-            <Link 
-              to="/services"
-              className="mt-4 sm:mt-0 flex items-center text-psyco-green-DEFAULT hover:text-psyco-green-light transition-colors"
-            >
-              View all services
-              <MoveRight className="ml-1 h-4 w-4" />
-            </Link>
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-5xl mx-auto text-center relative z-10 py-20">
+          <div className="mb-8 flex justify-center animate-fade-in">
+            <img 
+              src={agenticLogo} 
+              alt="AgenticEcom - Next-Gen Ecommerce Research & Solutions" 
+              className="h-32 md:h-40 w-auto"
+            />
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredServices.map((service, index) => (
-              <ServiceCard
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in text-glow">
+            Next-Gen Ecommerce Research & Solutions
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '100ms' }}>
+            Pioneering agentic commerce through cutting-edge research and full-scale business solutions
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <Link
+              to="/blog"
+              className="inline-flex items-center justify-center bg-white text-black font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 btn-glow text-lg"
+            >
+              Explore Research
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-black transition-all duration-300 text-lg"
+            >
+              View Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What is Agentic Commerce Section */}
+      <section className="py-20 px-6 md:px-12 bg-gradient-to-b from-black to-agentic-black-light">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center justify-center mb-8">
+            <Sparkles className="w-8 h-8 text-white mr-3" />
+            <h2 className="text-3xl md:text-4xl font-bold text-white">What is Agentic Commerce?</h2>
+          </div>
+          
+          <p className="text-lg text-white/70 mb-8 leading-relaxed">
+            Agentic commerce represents the future of online business—autonomous AI agents that handle everything from customer interactions to inventory management, marketing optimization, and strategic decision-making. Our research explores the frontiers of this technology while our development team builds practical, scalable solutions.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {benefits.map((benefit, index) => (
+              <div 
                 key={index}
-                {...service}
-                className="animate-fade-in"
+                className="flex items-start glassmorphism p-6 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
-              />
+              >
+                <div className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <p className="text-white/80">{benefit}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
-      
-      {/* Event Types Section */}
-      <section className="py-20 px-6 md:px-12 bg-psyco-black-light">
+
+      {/* Research Highlights Section */}
+      <section className="py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-2">Perfect for Any Event</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              We provide custom sound and lighting solutions for a wide range of events
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Latest Research</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              Discover case studies and insights from the cutting edge of agentic ecommerce innovation
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {[
-              { name: "Concerts", icon: <Volume2 size={32} /> },
-              { name: "Weddings", icon: <PartyPopper size={32} /> },
-              { name: "Corporate", icon: <CalendarDays size={32} /> },
-              { name: "Festivals", icon: <Music2 size={32} /> }
-            ].map((event, index) => (
+              {
+                title: "AI Customer Service Agents",
+                summary: "How autonomous agents are revolutionizing customer support with 24/7 availability and instant responses.",
+                category: "Case Study"
+              },
+              {
+                title: "Predictive Inventory Systems",
+                summary: "Using machine learning to forecast demand and optimize stock levels automatically.",
+                category: "Research"
+              },
+              {
+                title: "Automated Marketing Optimization",
+                summary: "AI-driven campaigns that adapt in real-time to maximize conversion rates.",
+                category: "Analysis"
+              }
+            ].map((article, index) => (
               <div 
                 key={index}
-                className="glassmorphism flex flex-col items-center justify-center py-8 px-4 text-center card-hover animate-fade-in"
+                className="glassmorphism p-6 card-hover animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="text-psyco-green-DEFAULT mb-4">
-                  {event.icon}
-                </div>
-                <h3 className="text-lg font-medium text-white">{event.name}</h3>
+                <div className="text-white/50 text-sm mb-2 uppercase tracking-wide">{article.category}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{article.title}</h3>
+                <p className="text-white/70 mb-4">{article.summary}</p>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center text-white hover:text-white/70 transition-colors link-hover"
+                >
+                  Read More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="text-center">
             <Link
-              to="/booking"
-              className="inline-flex items-center bg-psyco-green-DEFAULT hover:bg-psyco-green-dark text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 btn-glow"
+              to="/blog"
+              className="inline-flex items-center text-white hover:text-white/70 transition-colors text-lg link-hover"
             >
-              Book Your Event
-              <MoveRight className="ml-2 h-5 w-5" />
+              View All Research
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
-      
-      {/* CTA Section */}
-      <section className="py-20 px-6 md:px-12 bg-psyco-black-light relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-psyco-green-DEFAULT/10 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Elevate Your Event?</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-              Let's work together to create an unforgettable experience for your guests. Book our services today and bring your vision to life.
+
+      {/* Services Section */}
+      <section className="py-20 px-6 md:px-12 bg-agentic-black-light">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              From startup to enterprise, we build agentic ecommerce solutions that scale with your business
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/booking"
-                className="bg-psyco-green-DEFAULT hover:bg-psyco-green-dark text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center btn-glow"
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="glassmorphism p-8 card-hover animate-fade-in text-center"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                Book Now
-                <MoveRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                to="/services"
-                className="bg-transparent border border-psyco-green-DEFAULT text-psyco-green-DEFAULT hover:bg-psyco-green-DEFAULT/10 font-medium py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center"
+                <div className="flex justify-center mb-4 text-white">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-white/70">{service.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link
+              to="/services"
+              className="inline-flex items-center bg-white text-black font-bold py-3 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 btn-glow"
+            >
+              Learn More
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio/Case Studies Preview */}
+      <section className="py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              See how we've helped businesses transform with agentic commerce
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {[
+              {
+                title: "Fashion Retailer AI Transformation",
+                result: "300% increase in customer satisfaction with AI-powered support",
+                category: "Retail"
+              },
+              {
+                title: "B2B Marketplace Automation",
+                result: "Reduced operational costs by 60% through intelligent automation",
+                category: "B2B"
+              }
+            ].map((project, index) => (
+              <div 
+                key={index}
+                className="glassmorphism p-8 card-hover animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                View Services
-              </Link>
-            </div>
+                <div className="text-white/50 text-sm mb-2 uppercase tracking-wide">{project.category}</div>
+                <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
+                <div className="flex items-start mb-4">
+                  <TrendingUp className="w-5 h-5 text-white mr-2 flex-shrink-0 mt-1" />
+                  <p className="text-white/80">{project.result}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Link
+              to="/references"
+              className="inline-flex items-center text-white hover:text-white/70 transition-colors text-lg link-hover"
+            >
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6 md:px-12 bg-gradient-to-t from-black to-agentic-black-light">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Ecommerce?
+          </h2>
+          <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+            Let's discuss how agentic commerce can revolutionize your business. Get a free consultation today.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/booking"
+              className="inline-flex items-center justify-center bg-white text-black font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 btn-glow text-lg"
+            >
+              Request Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Link
+              to="/blog"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-black transition-all duration-300 text-lg"
+            >
+              Read Research
+            </Link>
           </div>
         </div>
       </section>

@@ -33,17 +33,16 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				psyco: {
-					green: {
-						DEFAULT: '#10B981', // Primary green
-						light: '#34D399', // Lighter green
-						dark: '#059669', // Darker green
-						muted: 'rgba(16, 185, 129, 0.1)' // Transparent green for backgrounds
+				agentic: {
+					white: {
+						DEFAULT: '#FFFFFF',
+						muted: 'rgba(255, 255, 255, 0.7)',
+						subtle: 'rgba(255, 255, 255, 0.1)'
 					},
 					black: {
-						DEFAULT: '#121212', // Deep black
-						light: '#1E1E1E', // Lighter black
-						card: 'rgba(30, 30, 30, 0.7)' // Semi-transparent black for cards
+						DEFAULT: '#000000',
+						light: '#0A0A0A',
+						card: 'rgba(0, 0, 0, 0.8)'
 					}
 				},
 				primary: {
@@ -102,8 +101,8 @@ export default {
 					'100%': { transform: 'translateX(0)', opacity: '1' }
 				},
 				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 10px rgba(16, 185, 129, 0.4)' },
-					'50%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.7)' }
+					'0%, 100%': { boxShadow: '0 0 10px rgba(255, 255, 255, 0.3)' },
+					'50%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },

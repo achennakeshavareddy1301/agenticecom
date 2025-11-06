@@ -1,97 +1,94 @@
-
 import React, { useEffect, useState } from "react";
 import BlogPost from "@/components/BlogPost";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 const Blog = () => {
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   const [searchTerm, setSearchTerm] = useState("");
   
-  const blogPosts = [
+  const researchArticles = [
     {
-      id: "tentacular-urutz",
-      title: "PA Rental & Live Sets on Tentacular Urutz Party, Italy",
-      excerpt: "Our team provided a custom sound system and technical support for the underground psychedelic trance event in Italy, featuring our signature horn-loaded setup.",
-      date: "April 8, 2023",
-      readTime: "6 min read",
-      author: "Technical Crew",
-      category: "Sound",
-      imageSrc: "/lovable-uploads/8dced82a-6a2c-48ee-a060-463c28764183.png",
+      id: "ai-customer-service",
+      title: "Autonomous AI Agents in Customer Service",
+      excerpt: "Deep dive into how autonomous AI agents are transforming customer support with 24/7 availability, instant responses, and continuous learning capabilities.",
+      date: "November 2, 2025",
+      readTime: "8 min read",
+      author: "Dr. Sarah Chen",
+      category: "Research",
+      imageSrc: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80",
       featured: true
     },
     {
-      id: "2",
-      title: "The Evolution of Stage Lighting Technology",
-      excerpt: "From traditional par cans to modern LED fixtures and intelligent lighting, we explore how stage lighting has evolved over the decades.",
-      date: "February 22, 2023",
+      id: "predictive-inventory",
+      title: "Machine Learning for Inventory Optimization",
+      excerpt: "Exploring how predictive algorithms are revolutionizing inventory management, reducing waste, and optimizing stock levels in real-time.",
+      date: "October 28, 2025",
+      readTime: "10 min read",
+      author: "Michael Torres",
+      category: "Case Study",
+      imageSrc: "https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&q=80"
+    },
+    {
+      id: "automated-marketing",
+      title: "AI-Driven Marketing Campaign Optimization",
+      excerpt: "How autonomous agents are testing, learning, and adapting marketing campaigns in real-time to maximize conversion rates.",
+      date: "October 15, 2025",
       readTime: "7 min read",
-      author: "Maria Williams",
-      category: "Lighting",
-      imageSrc: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
+      author: "Emma Rodriguez",
+      category: "Analysis",
+      imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80"
     },
     {
-      id: "3",
-      title: "DJ Techniques That Get the Crowd Moving",
-      excerpt: "Experienced DJs share their secrets for reading the room and keeping the dance floor packed all night long.",
-      date: "March 10, 2023",
-      readTime: "6 min read",
-      author: "DJ Rhythm",
-      category: "DJ",
-      imageSrc: "https://images.unsplash.com/photo-1571266087814-e7360f035f25?auto=format&fit=crop&q=80"
-    },
-    {
-      id: "4",
-      title: "Setting Up the Perfect Festival Sound",
-      excerpt: "Special considerations for outdoor festival sound setups that ensure great audio experience for all attendees regardless of weather conditions.",
-      date: "April 5, 2023",
-      readTime: "8 min read",
-      author: "Alex Thompson",
-      category: "Sound",
-      imageSrc: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80"
-    },
-    {
-      id: "5",
-      title: "Creative Lighting Ideas for Corporate Events",
-      excerpt: "Elevate your corporate event with these innovative lighting techniques that create a professional yet engaging atmosphere.",
-      date: "May 18, 2023",
-      readTime: "4 min read",
-      author: "Sarah Johnson",
-      category: "Lighting",
-      imageSrc: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
-    },
-    {
-      id: "6",
-      title: "The Technical Rider: What Event Organizers Need to Know",
-      excerpt: "Understanding the technical requirements for performers and how to prepare your venue to meet these specifications.",
-      date: "June 30, 2023",
+      id: "personalization-engines",
+      title: "Next-Gen Personalization Engines",
+      excerpt: "Study of how AI agents create hyper-personalized shopping experiences by analyzing behavior patterns and predicting customer needs.",
+      date: "October 5, 2025",
       readTime: "9 min read",
-      author: "Michael Stevens",
-      category: "Technical",
-      imageSrc: "https://images.unsplash.com/photo-1608749333098-a1783ca4b4bf?auto=format&fit=crop&q=80"
+      author: "Dr. James Park",
+      category: "Research",
+      imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80"
+    },
+    {
+      id: "supply-chain",
+      title: "Agentic Systems in Supply Chain Management",
+      excerpt: "Comprehensive analysis of autonomous agents managing end-to-end supply chain operations with minimal human intervention.",
+      date: "September 20, 2025",
+      readTime: "11 min read",
+      author: "Dr. Lisa Anderson",
+      category: "Case Study",
+      imageSrc: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&q=80"
+    },
+    {
+      id: "dynamic-pricing",
+      title: "Dynamic Pricing: The Agentic Approach",
+      excerpt: "How AI agents continuously adjust pricing strategies based on market conditions, competitor analysis, and demand forecasting.",
+      date: "September 10, 2025",
+      readTime: "6 min read",
+      author: "Marcus Williams",
+      category: "Analysis",
+      imageSrc: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80"
     }
   ];
   
   const categories = [
     "All",
-    "Sound",
-    "Lighting",
-    "DJ",
-    "Technical"
+    "Research",
+    "Case Study",
+    "Analysis"
   ];
   
   const [activeCategory, setActiveCategory] = useState("All");
   
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.author.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredArticles = researchArticles.filter(article => {
+    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.author.toLowerCase().includes(searchTerm.toLowerCase());
       
-    const matchesCategory = activeCategory === "All" || post.category === activeCategory;
+    const matchesCategory = activeCategory === "All" || article.category === activeCategory;
     
     return matchesSearch && matchesCategory;
   });
@@ -99,24 +96,26 @@ const Blog = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="bg-psyco-black-light py-16 px-6 md:px-12">
+      <section className="bg-agentic-black-light py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">Blog & Insights</h1>
-            <p className="text-xl text-gray-300 mb-8 animate-fade-in animation-delay-100">
-              Industry knowledge, technical tips, and event inspiration from our expert team
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+              Agentic Commerce Research
+            </h1>
+            <p className="text-xl text-white/70 mb-8 animate-fade-in" style={{ animationDelay: '100ms' }}>
+              Cutting-edge insights, case studies, and analysis from the forefront of agentic ecommerce innovation
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-4 items-center animate-fade-in animation-delay-200">
+          <div className="flex flex-col md:flex-row gap-4 items-center animate-fade-in" style={{ animationDelay: '200ms' }}>
             <div className="relative w-full md:w-1/2">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/40" size={18} />
               <Input
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Search research articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-psyco-black-DEFAULT border-psyco-green-muted/50 w-full"
+                className="pl-10 bg-black border-white/10 text-white w-full"
               />
             </div>
             
@@ -125,10 +124,10 @@ const Blog = () => {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+                  className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors font-medium ${
                     activeCategory === category
-                      ? "bg-psyco-green-DEFAULT text-white"
-                      : "bg-psyco-black-DEFAULT text-gray-300 hover:bg-psyco-black-card"
+                      ? "bg-white text-black"
+                      : "bg-black text-white/70 hover:bg-white/10"
                   }`}
                 >
                   {category}
@@ -139,50 +138,52 @@ const Blog = () => {
         </div>
       </section>
       
-      {/* Blog Posts */}
-      <section className="py-16 px-6 md:px-12">
+      {/* Research Articles */}
+      <section className="py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          {filteredPosts.length > 0 ? (
+          {filteredArticles.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
+              {filteredArticles.map((article, index) => (
                 <BlogPost
-                  key={post.id}
-                  {...post}
-                  className={`animate-fade-in ${post.featured ? "md:col-span-2" : ""}`}
+                  key={article.id}
+                  {...article}
+                  className={`animate-fade-in ${article.featured ? "md:col-span-2" : ""}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 />
               ))}
             </div>
           ) : (
             <div className="text-center py-16">
-              <h3 className="text-xl text-white mb-2">No posts found</h3>
-              <p className="text-gray-400">Try adjusting your search or category filter</p>
+              <h3 className="text-xl text-white mb-2">No articles found</h3>
+              <p className="text-white/60">Try adjusting your search or category filter</p>
             </div>
           )}
         </div>
       </section>
       
       {/* Newsletter Section */}
-      <section className="py-16 px-6 md:px-12 bg-psyco-black-light">
+      <section className="py-20 px-6 md:px-12 bg-agentic-black-light">
         <div className="max-w-7xl mx-auto">
           <div className="glassmorphism p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Stay Updated with Industry Insights</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-              Subscribe to our newsletter to receive the latest articles, tips, and industry news directly in your inbox.
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Stay Updated on Agentic Commerce
+            </h2>
+            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+              Subscribe to receive the latest research, case studies, and insights on agentic ecommerce technology.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
               <Input
                 type="email"
                 placeholder="Your email address"
-                className="bg-psyco-black-DEFAULT border-psyco-green-muted/50 flex-grow"
+                className="bg-black border-white/10 text-white flex-grow"
               />
-              <button className="bg-psyco-green-DEFAULT hover:bg-psyco-green-dark text-white font-medium py-2 px-6 rounded-lg transition-colors">
+              <button className="bg-white text-black font-bold py-2 px-6 rounded-lg hover:bg-white/90 transition-all duration-300 btn-glow">
                 Subscribe
               </button>
             </div>
             
-            <p className="text-gray-400 text-sm mt-4">
+            <p className="text-white/40 text-sm mt-4">
               We respect your privacy. Unsubscribe at any time.
             </p>
           </div>

@@ -11,17 +11,17 @@ const Index = () => {
   const services = [
     {
       title: "Startup Ecom",
-      description: "Launch your online store with AI-powered automation. Perfect for new businesses ready to scale from day one.",
+      description: "SEO-optimized e-commerce websites for startups. Mobile-responsive, fast-loading, and ready for agentic integration.",
       icon: <ShoppingCart className="w-8 h-8" />,
     },
     {
-      title: "Agentic Automation",
-      description: "Transform your existing store with intelligent agents that handle customer service, inventory, and marketing.",
+      title: "Agentic-Ready Sites",
+      description: "E-commerce platforms built with AI agent integration in mind. Structured for autonomous shopping experiences.",
       icon: <Brain className="w-8 h-8" />,
     },
     {
-      title: "Enterprise Solutions",
-      description: "Custom-built platforms for large-scale operations with advanced AI integration and scalable architecture.",
+      title: "Enterprise E-commerce",
+      description: "Scalable, SEO-friendly e-commerce solutions for large businesses with advanced search optimization and performance.",
       icon: <Code className="w-8 h-8" />,
     }
   ];
@@ -152,7 +152,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
             <p className="text-white/70 max-w-2xl mx-auto">
-              From startup to enterprise, we build agentic ecommerce solutions that scale with your business
+              We build SEO-friendly and agentic-friendly e-commerce websites for online businesses
             </p>
           </div>
           

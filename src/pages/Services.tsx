@@ -11,7 +11,7 @@ const Services = () => {
     title: "Startup Ecom",
     tagline: "Launch Fast, Scale Faster",
     description: "Perfect for new businesses ready to enter the ecommerce space with AI-powered automation from day one.",
-    price: "Starting at $5,000",
+    price: "₹5,000",
     features: ["Custom storefront design and development", "AI-powered product recommendations", "Automated inventory tracking", "Smart chatbot for customer service", "Payment gateway integration", "Mobile-responsive design", "Basic analytics dashboard", "30 days of post-launch support"],
     recommended: false
   }, {
@@ -20,7 +20,7 @@ const Services = () => {
     title: "Agentic Automation",
     tagline: "Transform Your Existing Store",
     description: "Upgrade your current ecommerce platform with intelligent agents that handle operations autonomously.",
-    price: "Starting at $10,000",
+    price: "₹10,000",
     features: ["AI customer service agent integration", "Intelligent inventory management system", "Automated marketing campaign optimization", "Predictive analytics and forecasting", "Multi-channel sales automation", "Dynamic pricing algorithms", "Advanced reporting and insights", "60 days of optimization and support"],
     recommended: true
   }, {
@@ -68,9 +68,85 @@ const Services = () => {
       </section>
 
       {/* Service Packages */}
-      
+      <section className="py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Choose Your Package</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              Professional e-commerce solutions tailored to your business needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {servicePackages.map((pkg, index) => (
+              <div
+                key={pkg.id}
+                className={`relative p-8 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 animate-fade-in ${
+                  pkg.recommended
+                    ? 'bg-white/10 border-white/30 shadow-2xl'
+                    : 'bg-white/5 border-white/10 hover:border-white/20'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {pkg.recommended && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black px-4 py-1 rounded-full text-sm font-bold">
+                    RECOMMENDED
+                  </div>
+                )}
+                
+                <div className="text-white/80 mb-4">{pkg.icon}</div>
+                <h3 className="text-2xl font-bold text-white mb-2">{pkg.title}</h3>
+                <p className="text-white/60 text-sm mb-4">{pkg.tagline}</p>
+                <p className="text-white/70 mb-6">{pkg.description}</p>
+                
+                <div className="mb-6">
+                  <div className="text-3xl font-bold text-white">{pkg.price}</div>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start text-white/70 text-sm">
+                      <Check className="w-5 h-5 mr-2 text-white/90 flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link 
+                  to="/booking" 
+                  className="w-full inline-flex items-center justify-center bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-white/90 transition-all duration-300"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Additional Services */}
+      <section className="py-20 px-6 md:px-12 bg-white/5">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Additional Services</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {additionalServices.map((service, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="text-white/80 mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-white/60 text-sm">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       
 
       {/* Process Section */}

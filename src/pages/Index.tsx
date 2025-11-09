@@ -115,7 +115,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[
               {
                 title: "AI Customer Service Agents",
@@ -126,11 +126,6 @@ const Index = () => {
                 title: "Predictive Inventory Systems",
                 summary: "Using machine learning to forecast demand and optimize stock levels automatically.",
                 category: "Research"
-              },
-              {
-                title: "Automated Marketing Optimization",
-                summary: "AI-driven campaigns that adapt in real-time to maximize conversion rates.",
-                category: "Analysis"
               }
             ].map((article, index) => (
               <div 

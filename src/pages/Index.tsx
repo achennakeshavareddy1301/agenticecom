@@ -86,7 +86,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-white">What is Agentic Commerce?</h2>
           </div>
           
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="text-base text-white/70 leading-relaxed text-justify max-w-4xl">
             Imagine waking up to find your morning coffee already ordered, your groceries restocked, and that perfect birthday gift for your mom delivered—all without lifting a finger. Welcome to agentic commerce, where intelligent AI agents become your personal shopping companions. Instead of spending hours comparing prices across websites or worrying about missing that limited-time deal, your AI agent works tirelessly in the background, understanding your preferences, hunting for the best options, and completing purchases on your behalf. It's like having a trusted friend who knows exactly what you need, when you need it, and ensures it arrives at your doorstep—transforming the exhausting chore of online shopping into an effortless experience. This isn't just the future of e-commerce; it's a fundamental shift where technology doesn't just help you shop—it shops for you, giving you back the most precious commodity: your time.
           </p>
         </div>

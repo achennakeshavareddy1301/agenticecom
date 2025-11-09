@@ -184,55 +184,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio/Case Studies Preview */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              See how we've helped businesses transform with agentic commerce
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {[
-              {
-                title: "Fashion Retailer AI Transformation",
-                result: "300% increase in customer satisfaction with AI-powered support",
-                category: "Retail"
-              },
-              {
-                title: "B2B Marketplace Automation",
-                result: "Reduced operational costs by 60% through intelligent automation",
-                category: "B2B"
-              }
-            ].map((project, index) => (
-              <div 
-                key={index}
-                className="glassmorphism p-8 card-hover animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="text-white/50 text-sm mb-2 uppercase tracking-wide">{project.category}</div>
-                <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                <div className="flex items-start mb-4">
-                  <TrendingUp className="w-5 h-5 text-white mr-2 flex-shrink-0 mt-1" />
-                  <p className="text-white/80">{project.result}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link
-              to="/references"
-              className="inline-flex items-center text-white hover:text-white/70 transition-colors text-lg link-hover"
-            >
-              View All Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 px-6 md:px-12 bg-gradient-to-t from-black to-agentic-black-light">

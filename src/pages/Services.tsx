@@ -1,92 +1,52 @@
 import React, { useEffect } from "react";
 import { ShoppingCart, Brain, Code, Check, ArrowRight, Sparkles, TrendingUp, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Services = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const servicePackages = [
-    {
-      id: "startup",
-      icon: <ShoppingCart className="w-12 h-12" />,
-      title: "Startup Ecom",
-      tagline: "Launch Fast, Scale Faster",
-      description: "Perfect for new businesses ready to enter the ecommerce space with AI-powered automation from day one.",
-      price: "Starting at $5,000",
-      features: [
-        "Custom storefront design and development",
-        "AI-powered product recommendations",
-        "Automated inventory tracking",
-        "Smart chatbot for customer service",
-        "Payment gateway integration",
-        "Mobile-responsive design",
-        "Basic analytics dashboard",
-        "30 days of post-launch support"
-      ],
-      recommended: false
-    },
-    {
-      id: "automation",
-      icon: <Brain className="w-12 h-12" />,
-      title: "Agentic Automation",
-      tagline: "Transform Your Existing Store",
-      description: "Upgrade your current ecommerce platform with intelligent agents that handle operations autonomously.",
-      price: "Starting at $10,000",
-      features: [
-        "AI customer service agent integration",
-        "Intelligent inventory management system",
-        "Automated marketing campaign optimization",
-        "Predictive analytics and forecasting",
-        "Multi-channel sales automation",
-        "Dynamic pricing algorithms",
-        "Advanced reporting and insights",
-        "60 days of optimization and support"
-      ],
-      recommended: true
-    },
-    {
-      id: "enterprise",
-      icon: <Code className="w-12 h-12" />,
-      title: "Enterprise Solutions",
-      tagline: "Custom-Built for Scale",
-      description: "Full-scale custom platforms with advanced AI integration designed for high-volume operations.",
-      price: "Custom Pricing",
-      features: [
-        "Fully custom platform architecture",
-        "Advanced AI agent orchestration",
-        "Multi-warehouse automation",
-        "Custom API development and integrations",
-        "White-label solutions available",
-        "Enterprise-grade security",
-        "Dedicated support team",
-        "Continuous optimization and updates"
-      ],
-      recommended: false
-    }
-  ];
-
-  const additionalServices = [
-    {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Consulting & Strategy",
-      description: "Expert guidance on implementing agentic commerce strategies for your business."
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Integration Services",
-      description: "Connect your existing tools and platforms with new AI-powered systems."
-    },
-    {
-      icon: <Sparkles className="w-6 h-6" />,
-      title: "Optimization & Training",
-      description: "Ongoing optimization of AI agents and training for your team."
-    }
-  ];
-
-  return (
-    <div className="pt-20">
+  const servicePackages = [{
+    id: "startup",
+    icon: <ShoppingCart className="w-12 h-12" />,
+    title: "Startup Ecom",
+    tagline: "Launch Fast, Scale Faster",
+    description: "Perfect for new businesses ready to enter the ecommerce space with AI-powered automation from day one.",
+    price: "Starting at $5,000",
+    features: ["Custom storefront design and development", "AI-powered product recommendations", "Automated inventory tracking", "Smart chatbot for customer service", "Payment gateway integration", "Mobile-responsive design", "Basic analytics dashboard", "30 days of post-launch support"],
+    recommended: false
+  }, {
+    id: "automation",
+    icon: <Brain className="w-12 h-12" />,
+    title: "Agentic Automation",
+    tagline: "Transform Your Existing Store",
+    description: "Upgrade your current ecommerce platform with intelligent agents that handle operations autonomously.",
+    price: "Starting at $10,000",
+    features: ["AI customer service agent integration", "Intelligent inventory management system", "Automated marketing campaign optimization", "Predictive analytics and forecasting", "Multi-channel sales automation", "Dynamic pricing algorithms", "Advanced reporting and insights", "60 days of optimization and support"],
+    recommended: true
+  }, {
+    id: "enterprise",
+    icon: <Code className="w-12 h-12" />,
+    title: "Enterprise Solutions",
+    tagline: "Custom-Built for Scale",
+    description: "Full-scale custom platforms with advanced AI integration designed for high-volume operations.",
+    price: "Custom Pricing",
+    features: ["Fully custom platform architecture", "Advanced AI agent orchestration", "Multi-warehouse automation", "Custom API development and integrations", "White-label solutions available", "Enterprise-grade security", "Dedicated support team", "Continuous optimization and updates"],
+    recommended: false
+  }];
+  const additionalServices = [{
+    icon: <TrendingUp className="w-6 h-6" />,
+    title: "Consulting & Strategy",
+    description: "Expert guidance on implementing agentic commerce strategies for your business."
+  }, {
+    icon: <Zap className="w-6 h-6" />,
+    title: "Integration Services",
+    description: "Connect your existing tools and platforms with new AI-powered systems."
+  }, {
+    icon: <Sparkles className="w-6 h-6" />,
+    title: "Optimization & Training",
+    description: "Ongoing optimization of AI agents and training for your team."
+  }];
+  return <div className="pt-20">
       {/* Hero Section */}
       <section className="py-20 px-6 md:px-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-agentic-black-light"></div>
@@ -99,97 +59,19 @@ const Services = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
             Ecommerce Solutions for Every Stage
           </h1>
-          <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '100ms' }}>
+          <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto animate-fade-in" style={{
+          animationDelay: '100ms'
+        }}>
             From startup launch to enterprise transformation, we build agentic commerce solutions that scale with your business
           </p>
         </div>
       </section>
 
       {/* Service Packages */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            {servicePackages.map((pkg, index) => (
-              <div 
-                key={pkg.id}
-                className={`glassmorphism p-8 card-hover animate-fade-in relative ${
-                  pkg.recommended ? 'border-2 border-white/30' : ''
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {pkg.recommended && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-white text-black px-4 py-1 rounded-full text-sm font-bold uppercase">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-white mb-4">
-                  {pkg.icon}
-                </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-2">{pkg.title}</h3>
-                <p className="text-white/60 text-sm font-medium mb-4 uppercase tracking-wide">
-                  {pkg.tagline}
-                </p>
-                <p className="text-white/70 mb-6">{pkg.description}</p>
-                
-                <div className="text-3xl font-bold text-white mb-6">{pkg.price}</div>
-                
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Check className="w-5 h-5 text-white mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Link
-                  to="/booking"
-                  className={`w-full inline-flex items-center justify-center font-bold py-3 px-6 rounded-lg transition-all duration-300 ${
-                    pkg.recommended
-                      ? 'bg-white text-black hover:bg-white/90 btn-glow'
-                      : 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-black'
-                  }`}
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Additional Services */}
-      <section className="py-20 px-6 md:px-12 bg-agentic-black-light">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Additional Services</h2>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              Comprehensive support to maximize your agentic commerce success
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => (
-              <div 
-                key={index}
-                className="glassmorphism p-8 text-center animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex justify-center text-white mb-4">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-white/70">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Process Section */}
       <section className="py-20 px-6 md:px-12">
@@ -202,18 +84,29 @@ const Services = () => {
           </div>
           
           <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { step: "01", title: "Discovery", description: "Understanding your business needs and goals" },
-              { step: "02", title: "Design", description: "Creating the perfect solution architecture" },
-              { step: "03", title: "Development", description: "Building and integrating AI agents" },
-              { step: "04", title: "Deploy & Optimize", description: "Launch and continuous improvement" }
-            ].map((phase, index) => (
-              <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+            {[{
+            step: "01",
+            title: "Discovery",
+            description: "Understanding your business needs and goals"
+          }, {
+            step: "02",
+            title: "Design",
+            description: "Creating the perfect solution architecture"
+          }, {
+            step: "03",
+            title: "Development",
+            description: "Building and integrating AI agents"
+          }, {
+            step: "04",
+            title: "Deploy & Optimize",
+            description: "Launch and continuous improvement"
+          }].map((phase, index) => <div key={index} className="text-center animate-fade-in" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="text-5xl font-bold text-white/20 mb-4">{phase.step}</div>
                 <h3 className="text-xl font-bold text-white mb-2">{phase.title}</h3>
                 <p className="text-white/60 text-sm">{phase.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -229,24 +122,16 @@ const Services = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/booking"
-              className="inline-flex items-center justify-center bg-white text-black font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 btn-glow text-lg"
-            >
+            <Link to="/booking" className="inline-flex items-center justify-center bg-white text-black font-bold py-4 px-8 rounded-lg hover:bg-white/90 transition-all duration-300 btn-glow text-lg">
               Schedule Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <Link
-              to="/references"
-              className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-black transition-all duration-300 text-lg"
-            >
+            <Link to="/references" className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-black transition-all duration-300 text-lg">
               View Portfolio
             </Link>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Services;

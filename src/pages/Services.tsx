@@ -99,20 +99,11 @@ const Services = () => {
                 <p className="text-white/60 text-sm mb-4">{pkg.tagline}</p>
                 <p className="text-white/70 mb-6">{pkg.description}</p>
                 
-                <div className="mb-6">
+                <div className="mb-8">
                   <div className="text-3xl font-bold text-white">{pkg.price}</div>
                 </div>
 
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start text-white/70 text-sm">
-                      <Check className="w-5 h-5 mr-2 text-white/90 flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link 
+                <Link
                   to="/booking" 
                   className="w-full inline-flex items-center justify-center bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-white/90 transition-all duration-300"
                 >

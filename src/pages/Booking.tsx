@@ -7,22 +7,22 @@ const Booking = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const bookingSteps = [{
-    icon: <Calendar className="h-8 w-8" />,
-    title: "Select a Date & Time",
-    description: "Choose your preferred date and time from our availability calendar."
-  }, {
+  const serviceSteps = [{
     icon: <MessageSquare className="h-8 w-8" />,
-    title: "Tell Us About Your Event",
-    description: "Provide details about your event type, venue, and specific requirements."
+    title: "Discovery Call",
+    description: "Share your vision, business goals, and website requirements with our team."
+  }, {
+    icon: <Calendar className="h-8 w-8" />,
+    title: "Planning & Design",
+    description: "We create a custom design strategy and project timeline tailored to your needs."
   }, {
     icon: <Headphones className="h-8 w-8" />,
-    title: "Consultation Call",
-    description: "Our team will contact you to discuss your needs in detail."
+    title: "Development & Testing",
+    description: "Our developers build your website with regular updates and feedback sessions."
   }, {
     icon: <CheckCircle className="h-8 w-8" />,
-    title: "Confirmation",
-    description: "Receive your booking confirmation and prepare for an amazing event."
+    title: "Launch & Support",
+    description: "Your website goes live with ongoing maintenance and support included."
   }];
   return <div className="pt-20">
       {/* Hero Section */}
@@ -41,14 +41,14 @@ const Booking = () => {
       <section className="py-16 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-2">How Booking Works</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">Our Website Development Process</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Our simple four-step process makes booking our services easy
+              From concept to launch - our proven four-step approach delivers exceptional websites
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {bookingSteps.map((step, index) => <div key={index} className="glassmorphism p-6 text-center animate-fade-in" style={{
+            {serviceSteps.map((step, index) => <div key={index} className="glassmorphism p-6 text-center animate-fade-in" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 <div className="text-psyco-green-DEFAULT mb-4 flex justify-center">
@@ -57,7 +57,7 @@ const Booking = () => {
                 <h3 className="text-xl font-medium text-white mb-2">{step.title}</h3>
                 <p className="text-gray-300">{step.description}</p>
                 
-                {index < bookingSteps.length - 1 && <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-psyco-green-DEFAULT/50">
+                {index < serviceSteps.length - 1 && <div className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 text-psyco-green-DEFAULT/50">
                     <MoveRight size={24} />
                   </div>}
               </div>)}

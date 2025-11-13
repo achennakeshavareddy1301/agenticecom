@@ -96,7 +96,7 @@ const Footer = () => {
                   className="text-white/60 hover:text-white transition-colors flex items-center"
                 >
                   <Mail size={16} className="mr-2" />
-                  info@agenticecom.com
+                  agenticecom@gmail.com
                 </a>
               </li>
             </ul>

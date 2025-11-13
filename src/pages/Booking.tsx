@@ -69,9 +69,9 @@ const Booking = () => {
       <section className="py-16 px-6 md:px-12 bg-psyco-black-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-2">Select a Date & Time</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">Schedule a Consultation</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Choose from our available slots and tell us about your event
+              Book a free consultation to discuss your website project requirements
             </p>
           </div>
           

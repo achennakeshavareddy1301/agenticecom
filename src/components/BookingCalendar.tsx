@@ -21,21 +21,21 @@ const availableTimeSlots = [
   '5:00 PM', '6:00 PM', '7:00 PM'
 ];
 
-const eventTypes = [
-  'Concert', 'Corporate Event', 'Wedding', 'Birthday Party',
-  'Festival', 'Conference', 'Club Night', 'Private Party',
-  'Other'
+const serviceTypes = [
+  'E-commerce Website', 'Business Website', 'Portfolio Website',
+  'Landing Page', 'Custom Web Application', 'Website Redesign',
+  'AI Automation Solutions', 'Other'
 ];
 
 const BookingCalendar = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [timeSlot, setTimeSlot] = useState<string>('');
-  const [eventType, setEventType] = useState<string>('');
+  const [serviceType, setServiceType] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    location: '',
+    companyName: '',
     details: ''
   });
 
@@ -47,10 +47,10 @@ const BookingCalendar = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!date || !timeSlot || !eventType) {
+    if (!date || !timeSlot || !serviceType) {
       toast({
         title: "Missing information",
-        description: "Please select a date, time slot, and event type",
+        description: "Please select a date, time slot, and service type",
         variant: "destructive"
       });
       return;
@@ -60,24 +60,24 @@ const BookingCalendar = () => {
     console.log({
       date: date ? format(date, 'yyyy-MM-dd') : '',
       timeSlot,
-      eventType,
+      serviceType,
       ...formData
     });
 
     toast({
-      title: "Booking request submitted!",
-      description: `We'll contact you soon to confirm your ${eventType} on ${format(date, 'MMMM dd, yyyy')} at ${timeSlot}.`,
+      title: "Consultation request submitted!",
+      description: `We'll contact you soon to confirm your consultation for ${serviceType} on ${format(date, 'MMMM dd, yyyy')} at ${timeSlot}.`,
     });
 
     // Reset form
     setDate(undefined);
     setTimeSlot('');
-    setEventType('');
+    setServiceType('');
     setFormData({
       name: '',
       email: '',
       phone: '',
-      location: '',
+      companyName: '',
       details: ''
     });
   };
@@ -115,13 +115,13 @@ const BookingCalendar = () => {
         </div>
         
         <div className="mt-4">
-          <label className="block text-gray-300 mb-2">Event Type</label>
-          <Select value={eventType} onValueChange={setEventType}>
+          <label className="block text-gray-300 mb-2">Service Type</label>
+          <Select value={serviceType} onValueChange={setServiceType}>
             <SelectTrigger className="bg-psyco-black-DEFAULT border-psyco-green-muted/50">
-              <SelectValue placeholder="Select event type" />
+              <SelectValue placeholder="Select service type" />
             </SelectTrigger>
             <SelectContent className="bg-psyco-black-light border-psyco-green-muted/50">
-              {eventTypes.map(type => (
+              {serviceTypes.map(type => (
                 <SelectItem key={type} value={type}>{type}</SelectItem>
               ))}
             </SelectContent>
@@ -132,7 +132,7 @@ const BookingCalendar = () => {
       <div className="glassmorphism p-6 animate-fade-in animation-delay-100">
         <div className="flex items-center space-x-2 mb-4">
           <MessageSquare className="h-5 w-5 text-psyco-green-DEFAULT" />
-          <h3 className="text-xl font-medium">Contact Information</h3>
+          <h3 className="text-xl font-medium">Your Information</h3>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -174,19 +174,19 @@ const BookingCalendar = () => {
           </div>
           
           <div>
-            <label htmlFor="location" className="block text-gray-300 mb-1">Event Location</label>
+            <label htmlFor="companyName" className="block text-gray-300 mb-1">Company Name (Optional)</label>
             <Input
-              id="location"
-              name="location"
-              value={formData.location}
+              id="companyName"
+              name="companyName"
+              value={formData.companyName}
               onChange={handleInputChange}
-              required
               className="bg-psyco-black-light border-psyco-green-muted/50"
+              placeholder="Your company name"
             />
           </div>
           
           <div>
-            <label htmlFor="details" className="block text-gray-300 mb-1">Event Details</label>
+            <label htmlFor="details" className="block text-gray-300 mb-1">Project Details</label>
             <Textarea
               id="details"
               name="details"
@@ -194,7 +194,7 @@ const BookingCalendar = () => {
               value={formData.details}
               onChange={handleInputChange}
               className="bg-psyco-black-light border-psyco-green-muted/50"
-              placeholder="Please provide any specific requirements or details about your event"
+              placeholder="Tell us about your website project, goals, and requirements"
             />
           </div>
           
@@ -202,7 +202,7 @@ const BookingCalendar = () => {
             type="submit" 
             className="w-full bg-psyco-green-DEFAULT hover:bg-psyco-green-dark transition-colors"
           >
-            Request Booking
+            Schedule Consultation
           </Button>
         </form>
       </div>

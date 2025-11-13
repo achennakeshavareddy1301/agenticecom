@@ -86,7 +86,7 @@ const BookingCalendar = () => {
     <div className="grid gap-8 md:grid-cols-2">
       <div className="glassmorphism p-6 animate-fade-in">
         <div className="flex items-center space-x-2 mb-4">
-          <CalendarClock className="h-5 w-5 text-psyco-green-DEFAULT" />
+          <CalendarClock className="h-5 w-5 text-primary" />
           <h3 className="text-xl font-medium">Select Date & Time</h3>
         </div>
         
@@ -96,17 +96,17 @@ const BookingCalendar = () => {
             selected={date}
             onSelect={setDate}
             disabled={(date) => date < new Date() || date > new Date(new Date().setMonth(new Date().getMonth() + 6))}
-            className="rounded-md border border-psyco-green-muted/50 bg-psyco-black-card"
+            className="rounded-md border border-border bg-card"
           />
         </div>
         
         <div className="mt-6">
-          <label className="block text-gray-300 mb-2">Select Time Slot</label>
+          <label className="block text-foreground mb-2 font-medium">Select Time Slot</label>
           <Select value={timeSlot} onValueChange={setTimeSlot}>
-            <SelectTrigger className="bg-psyco-black-DEFAULT border-psyco-green-muted/50">
+            <SelectTrigger className="bg-card border-border text-foreground">
               <SelectValue placeholder="Select a time slot" />
             </SelectTrigger>
-            <SelectContent className="bg-psyco-black-light border-psyco-green-muted/50">
+            <SelectContent className="bg-card border-border z-50">
               {availableTimeSlots.map(time => (
                 <SelectItem key={time} value={time}>{time}</SelectItem>
               ))}
@@ -115,12 +115,12 @@ const BookingCalendar = () => {
         </div>
         
         <div className="mt-4">
-          <label className="block text-gray-300 mb-2">Service Type</label>
+          <label className="block text-foreground mb-2 font-medium">Service Type</label>
           <Select value={serviceType} onValueChange={setServiceType}>
-            <SelectTrigger className="bg-psyco-black-DEFAULT border-psyco-green-muted/50">
+            <SelectTrigger className="bg-card border-border text-foreground">
               <SelectValue placeholder="Select service type" />
             </SelectTrigger>
-            <SelectContent className="bg-psyco-black-light border-psyco-green-muted/50">
+            <SelectContent className="bg-card border-border z-50">
               {serviceTypes.map(type => (
                 <SelectItem key={type} value={type}>{type}</SelectItem>
               ))}
@@ -131,25 +131,25 @@ const BookingCalendar = () => {
       
       <div className="glassmorphism p-6 animate-fade-in animation-delay-100">
         <div className="flex items-center space-x-2 mb-4">
-          <MessageSquare className="h-5 w-5 text-psyco-green-DEFAULT" />
+          <MessageSquare className="h-5 w-5 text-primary" />
           <h3 className="text-xl font-medium">Your Information</h3>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-gray-300 mb-1">Name</label>
+            <label htmlFor="name" className="block text-foreground mb-1 font-medium">Name</label>
             <Input
               id="name"
               name="name"
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="bg-psyco-black-light border-psyco-green-muted/50"
+              className="bg-card border-border text-foreground"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-gray-300 mb-1">Email</label>
+            <label htmlFor="email" className="block text-foreground mb-1 font-medium">Email</label>
             <Input
               id="email"
               name="email"
@@ -157,50 +157,50 @@ const BookingCalendar = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
-              className="bg-psyco-black-light border-psyco-green-muted/50"
+              className="bg-card border-border text-foreground"
             />
           </div>
           
           <div>
-            <label htmlFor="phone" className="block text-gray-300 mb-1">Phone</label>
+            <label htmlFor="phone" className="block text-foreground mb-1 font-medium">Phone</label>
             <Input
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
               required
-              className="bg-psyco-black-light border-psyco-green-muted/50"
+              className="bg-card border-border text-foreground"
             />
           </div>
           
           <div>
-            <label htmlFor="companyName" className="block text-gray-300 mb-1">Company Name (Optional)</label>
+            <label htmlFor="companyName" className="block text-foreground mb-1 font-medium">Company Name (Optional)</label>
             <Input
               id="companyName"
               name="companyName"
               value={formData.companyName}
               onChange={handleInputChange}
-              className="bg-psyco-black-light border-psyco-green-muted/50"
+              className="bg-card border-border text-foreground"
               placeholder="Your company name"
             />
           </div>
           
           <div>
-            <label htmlFor="details" className="block text-gray-300 mb-1">Project Details</label>
+            <label htmlFor="details" className="block text-foreground mb-1 font-medium">Project Details</label>
             <Textarea
               id="details"
               name="details"
               rows={3}
               value={formData.details}
               onChange={handleInputChange}
-              className="bg-psyco-black-light border-psyco-green-muted/50"
+              className="bg-card border-border text-foreground"
               placeholder="Tell us about your website project, goals, and requirements"
             />
           </div>
           
           <Button 
             type="submit" 
-            className="w-full bg-psyco-green-DEFAULT hover:bg-psyco-green-dark transition-colors"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
           >
             Schedule Consultation
           </Button>

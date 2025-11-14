@@ -79,16 +79,60 @@ const Index = () => {
       </section>
 
       {/* What is Agentic Commerce Section */}
-      <section className="py-20 px-6 md:px-12 bg-gradient-to-b from-black to-agentic-black-light">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center justify-center mb-8">
-            <Sparkles className="w-8 h-8 text-white mr-3" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white">What is Agentic Commerce?</h2>
+      <section className="py-20 px-6 md:px-12 bg-gradient-to-b from-black to-agentic-black-light relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="flex items-center justify-center mb-12 animate-fade-in">
+            <Sparkles className="w-10 h-10 text-white mr-3" />
+            <h2 className="text-3xl md:text-5xl font-bold text-white">What is Agentic Commerce?</h2>
           </div>
           
-          <p className="text-base text-white/70 leading-relaxed text-justify max-w-4xl">
-            Imagine waking up to find your morning coffee already ordered, your groceries restocked, and that perfect birthday gift for your mom delivered—all without lifting a finger. Welcome to agentic commerce, where intelligent AI agents become your personal shopping companions. Instead of spending hours comparing prices across websites or worrying about missing that limited-time deal, your AI agent works tirelessly in the background, understanding your preferences, hunting for the best options, and completing purchases on your behalf. It's like having a trusted friend who knows exactly what you need, when you need it, and ensures it arrives at your doorstep—transforming the exhausting chore of online shopping into an effortless experience. This isn't just the future of e-commerce; it's a fundamental shift where technology doesn't just help you shop—it shops for you, giving you back the most precious commodity: your time.
+          <p className="text-lg text-white/80 leading-relaxed text-center max-w-3xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: '100ms' }}>
+            Imagine waking up to find your morning coffee already ordered, your groceries restocked, and that perfect birthday gift for your mom delivered—all without lifting a finger.
           </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="glassmorphism p-6 card-hover animate-fade-in group" style={{ animationDelay: '200ms' }}>
+              <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                <Brain className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Your AI Shopping Companion</h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Intelligent AI agents that understand your preferences, hunting for the best options and completing purchases on your behalf.
+              </p>
+            </div>
+
+            <div className="glassmorphism p-6 card-hover animate-fade-in group" style={{ animationDelay: '300ms' }}>
+              <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Works Tirelessly</h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                No more hours comparing prices or worrying about missing deals. Your agent works 24/7 in the background for you.
+              </p>
+            </div>
+
+            <div className="glassmorphism p-6 card-hover animate-fade-in group" style={{ animationDelay: '400ms' }}>
+              <div className="bg-white/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Effortless Experience</h3>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Like having a trusted friend who knows exactly what you need, when you need it, and ensures it arrives at your doorstep.
+              </p>
+            </div>
+          </div>
+
+          <div className="glassmorphism p-8 text-center animate-fade-in" style={{ animationDelay: '500ms' }}>
+            <p className="text-white/90 text-lg leading-relaxed">
+              <span className="font-bold text-white">This isn't just the future of e-commerce</span> — it's a fundamental shift where technology doesn't just help you shop, <span className="text-white font-semibold">it shops for you</span>, giving you back the most precious commodity: <span className="text-white font-bold">your time</span>.
+            </p>
+          </div>
         </div>
       </section>
 

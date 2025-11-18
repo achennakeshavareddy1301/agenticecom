@@ -74,23 +74,12 @@ const Blog = () => {
     }
   ];
   
-  const categories = [
-    "All",
-    "Research",
-    "Case Study",
-    "Analysis"
-  ];
-  
   const [activeCategory, setActiveCategory] = useState("All");
   
-  const filteredArticles = researchArticles.filter(article => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      article.author.toLowerCase().includes(searchTerm.toLowerCase());
-      
-    const matchesCategory = activeCategory === "All" || article.category === activeCategory;
-    
-    return matchesSearch && matchesCategory;
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesSearch;
   });
 
   return (
